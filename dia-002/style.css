@@ -1,0 +1,23 @@
+body{
+    width: 100%;
+    height: 100svh;
+    margin: 0;
+    background-color: rgb(28, 185, 132);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.conteiner{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+.palito{
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+}
