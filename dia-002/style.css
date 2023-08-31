@@ -8,16 +8,139 @@ body{
     justify-content: center;
 }
 .conteiner{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    position: relative;
     width: 100px;
     height: 100px;
     cursor: pointer;
 }
+.conteiner{
+    #palito1{
+        top: 0px;
+        left: 0px;
+        animation-name: none;
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+    }
+    #palito2{
+        top: calc(100%/2);
+        left: 0px;
+        animation-name: none;
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+    }
+    #palito3{
+        left: 0px;
+        top: 100%;
+        animation-name: none;
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+    }
+}
+
+.conteiner.ativo{
+    #palito1{
+        transform: rotate(45deg);
+        top: calc(100%/2);
+    }
+    #palito2{
+        opacity: 0;
+    }
+    #palito3{
+        transform: rotate(-45deg);
+        top: calc(100%/2);
+    }
+}
+
 .palito{
+    position: absolute;
     width: 100%;
     height: 10px;
     border-radius: 5px;
     background-color: #fff;
+}
+
+
+@keyframes animacao-palito1 {
+    0%{
+        top: 0px;
+        transform: rotate(0);
+    }
+    50%{
+        top: calc(100%/2);
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(45deg);
+        top: calc(100%/2);
+    }
+}
+@keyframes animacao-palito2 {
+    0%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    70%{
+        opacity: 0;
+    }
+    100%{
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+@keyframes animacao-palito3 {
+    0%{
+        top: 100%;
+        transform: rotate(0deg);
+    }
+    50%{
+        top: calc(100%/2);
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(-45deg);
+        top: calc(100%/2);
+    }
+}
+@keyframes animacao-palito1-rev {
+    0%{
+        transform: rotate(45deg);
+        top: calc(100%/2);
+    }
+    50%{
+        top: calc(100%/2);
+        transform: rotate(0);
+    }
+    100%{
+        top: 0px;
+    }
+}
+@keyframes animacao-palito2-rev {
+    0%{
+        opacity: 0;
+    }
+    30%{
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes animacao-palito3-rev {
+    0%{
+        transform: rotate(-45deg);
+        top: calc(100%/2);
+    }
+    50%{
+        top: calc(100%/2);
+        transform: rotate(0deg);
+    }
+    100%{
+        top: 100%;
+    }
 }
